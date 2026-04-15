@@ -1,0 +1,6 @@
+# HTTP client for downloading remote PDFs.
+httpx==0.28.1
+# MCP server framework used to expose read_pdf and pdf_page_count.
+mcp==1.27.0
+# Pure-Python PDF parser; smaller than PyMuPDF for this lightweight service.
+pypdf==6.10.1
