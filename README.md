@@ -19,13 +19,11 @@ Small MCP server that downloads a public PDF, extracts text, and returns it over
 7. The server either counts pages or extracts text from the requested page range.
 8. The response is truncated if it grows too large for a practical MCP response.
 
-## Why `pypdf`
+## Libraries In Use
 
-This project uses `pypdf` instead of `PyMuPDF` because it is much smaller in the final Docker image and is good enough for basic text extraction.
-
-- `pypdf` is pure Python and lightweight.
-- `PyMuPDF` is faster and often stronger on complex PDFs, but it makes the image much larger.
-- For this repo, the smaller image was the better tradeoff.
+- `mcp` and `FastMCP` expose the server tools over stdio.
+- `httpx` downloads remote PDFs with explicit timeout handling.
+- `pypdf` opens the downloaded PDF in memory and extracts page text.
 
 ## Safety Limits
 
